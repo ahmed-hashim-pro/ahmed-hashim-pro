@@ -46,7 +46,12 @@ the server and the approving CLI are different programs. The classifier refuses
 what it cannot prove is a read, which is what catches a `DELETE` hidden inside a
 CTE that opens with `WITH`.
 
-`Go` · `MCP` · 127 tests · end-to-end suite drives the real binary over stdio
+It also runs on Kubernetes: MCP over HTTP in a 60 MB distroless image, where
+approving a write means `kubectl exec` — the boundary now needs cluster
+credentials rather than access to a file. CI stands up a real cluster and
+drives the deployed service.
+
+`Go` · `MCP` · `Kubernetes` · `Helm` · 138 tests · end-to-end over stdio and HTTP
 
 #### [rag-knowledge-agent](https://github.com/ahmed-hashim-pro/rag-knowledge-agent) — a CLI RAG agent that shows its work
 
@@ -88,7 +93,7 @@ of failing in surprising ways.
 | **Working with models** | Anthropic / Claude, MCP, RAG, hybrid retrieval, evals, multi-provider routing |
 | **Languages** | Go, Python, TypeScript, C++ |
 | **Web & mobile** | Angular, Ionic, Node |
-| **Infrastructure** | AWS, Docker, GitHub Actions |
+| **Infrastructure** | AWS, Docker, Kubernetes, Helm, GitHub Actions |
 
 ---
 
