@@ -24,6 +24,18 @@ in itself.
 
 `Python` · 202 tests · quickstart runs with no API key, no network
 
+#### [sqlguard-mcp](https://github.com/ahmed-hashim-pro/sqlguard-mcp) — let an agent query a real database without giving it write access
+
+Reads run immediately under a row cap and a timeout. Writes are refused until a
+human approves that exact statement, in a separate process the agent has no way
+to reach — the approval is bound to a statement rather than a capability, and is
+single-use through an atomic filesystem operation rather than a mutex, because
+the server and the approving CLI are different programs. The classifier refuses
+what it cannot prove is a read, which is what catches a `DELETE` hidden inside a
+CTE that opens with `WITH`.
+
+`Go` · `MCP` · 127 tests · end-to-end suite drives the real binary over stdio
+
 #### [rag-knowledge-agent](https://github.com/ahmed-hashim-pro/rag-knowledge-agent) — a CLI RAG agent that shows its work
 
 Hybrid retrieval — dense vectors and BM25, fused by reciprocal rank — with every
@@ -62,7 +74,7 @@ of failing in surprising ways.
 | | |
 | --- | --- |
 | **Working with models** | Anthropic / Claude, MCP, RAG, hybrid retrieval, evals, multi-provider routing |
-| **Languages** | Python, TypeScript, C++ |
+| **Languages** | Go, Python, TypeScript, C++ |
 | **Web & mobile** | Angular, Ionic, Node |
 | **Infrastructure** | AWS, Docker, GitHub Actions |
 
