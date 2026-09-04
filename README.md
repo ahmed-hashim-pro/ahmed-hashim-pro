@@ -13,6 +13,19 @@ stopped working?**
 
 ### Open source
 
+#### [atlas-graph-db](https://github.com/ahmed-hashim-pro/atlas-graph-db) — a graph database written from scratch
+
+Storage engine with write-ahead logging, snapshots and crash recovery;
+transactions, property/unique/fulltext indexes, traversals and graph algorithms;
+a full AQL query language over the top; a multi-user Fastify server with
+argon2id auth, revocable sessions, API tokens and a permission matrix; a typed
+isomorphic client SDK; and the Knowledge Graph Explorer web app. Durability came
+before features — a graph store that loses a write on power failure is a cache
+with extra steps — so recovery was tested by killing the process mid-transaction
+before anything was built on top of it.
+
+`TypeScript` · `Angular` · 468 tests · benchmark gate at 1M nodes / 5M edges, signed off in `docs/BENCHMARKS.md`
+
 #### [sqlguard-mcp](https://github.com/ahmed-hashim-pro/sqlguard-mcp) — let an agent query a real database without giving it write access
 
 Reads run under a row cap and a timeout. Writes are refused until a human
@@ -68,11 +81,7 @@ switch lives in the server's environment where a tool argument cannot reach it.
 
 ### Closed source
 
-The systems half, and most of the last decade.
-
-**Atlas** — a graph database platform built from scratch in TypeScript: storage
-engine with write-ahead logging and snapshots, its own AQL query language,
-multi-user server, client SDK, and an Angular knowledge-graph explorer.
+The rest of the last decade.
 
 **My Stream** — a multi-model AI publishing platform I build and run.
 Angular/Ionic and Android on AWS, routing across seven LLM providers behind one
