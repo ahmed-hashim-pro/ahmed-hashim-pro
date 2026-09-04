@@ -24,6 +24,18 @@ in itself.
 
 `Python` · 202 tests · quickstart runs with no API key, no network
 
+#### [llm-contract-router](https://github.com/ahmed-hashim-pro/llm-contract-router) — fall back to a cheaper model without breaking the caller
+
+Routes across providers behind one interface, adapting each request to the
+target model's capability tier — a compact model gets the schema restated, an
+example to copy and temperature zero; a frontier model gets none of that,
+because the scaffolding crowds out the task. The answer is validated against
+your schema, and a failure sends the model the specific constraints it broke
+rather than asking again and hoping. Degraded means cheaper and slower, never
+malformed.
+
+`TypeScript` · zero runtime dependencies · 98 tests, no API keys
+
 #### [sqlguard-mcp](https://github.com/ahmed-hashim-pro/sqlguard-mcp) — let an agent query a real database without giving it write access
 
 Reads run immediately under a row cap and a timeout. Writes are refused until a
