@@ -38,6 +38,22 @@ access to a file.
 
 `Go` · `MCP` · `Kubernetes` · `Helm` · 138 tests · CI stands up a real cluster and drives the deployed service
 
+#### [runon](https://github.com/ahmed-hashim-pro/runon) — run the same shell script on your laptop, one server, or a fleet
+
+A procedure is a directory with a `main.sh`, so adding a capability means adding
+a directory and the tool itself never changes. It shells out to your own `ssh`,
+which is why your config, agent and jump hosts already work and there is no
+second implementation of SSH to keep correct. The inventory is committed, so a
+password written in it is a hard error — a host names an environment variable or
+a `0600` file instead, and `add-host` will write that file for you rather than
+take a password on a command line where shell history can keep it.
+
+The suite was green at 319 tests while four bugs made copying to a fresh host
+impossible, because everything drove a fake transport. There is now a CI job
+that stands up a real sshd and copies to it, which is what found them.
+
+`Python` · [on PyPI](https://pypi.org/project/runon/) · zero runtime dependencies · 338 tests · Ubuntu + macOS × 3.11–3.13, plus an integration job against a live sshd
+
 #### [llm-contract-router](https://github.com/ahmed-hashim-pro/llm-contract-router) — fall back to a cheaper model without breaking the caller
 
 Routes across providers behind one interface, adapting each request to the
